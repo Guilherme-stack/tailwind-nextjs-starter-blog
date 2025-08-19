@@ -1,0 +1,77 @@
+---
+title: 'Análise do Desempenho Escolar das Escolas de Goiânia'
+date: '2025-08-18'
+tags: ['writings', 'book', 'reflection']
+draft: false
+summary: The Time Traveller (for so it will be convenient to speak of him) was
+  expounding a recondite matter to us. His pale grey eyes shone and
+  twinkled, and his usually pale face was flushed and animated...
+---
+
+ 
+   
+# Introdução
+
+A partir da Base de Dados sobre o Desempenho Escolar das Escolas de Goiânia, este projeto visa analisar 
+e visualizar os dados para identificar tendências e insights sobre o desempenho escolar na cidade. 
+Utilizando Python, foram extraídos dados do site da prefeitura de Goiânia, permitindo uma análise detalhada
+sobre o desempenho escolar dos alunos de acordo com a prova IDEGO, além de comparações entre escolas públicas e privadas.
+
+O princpal indicador para analise é a nota média dos alunos na prova do IDEGO, que é aplicada anualmente. 
+IDEGO é o Índice de Desenvolvimento da Educação Básica do Estado de Goiás, que avalia a qualidade do ensino nas escolas goianas.
+A prova visa medir o desempenho dos alunos em diversas disciplinas, como Língua Portuguesa e Matemática.
+
+**Tecnologias utilizadas incluem Python para análise de dados, Pandas para manipulação de dados,
+Matplotlib e Seaborn para visualização de dados, e Jupyter Notebook para documentação e apresentação dos resultados.*
+
+# Hipóteses
+A análise parte das seguintes hipóteses:
+1. As escolas públicas tendem a ter um desempenho inferior em comparação às escolas privadas.
+2. Existe uma correlação entre a localização da escola e o desempenho dos alunos.
+3. As escolas com maior número de alunos tendem a ter um desempenho pior.
+4. Escolas Militares tendem a ter um desempenho melhor que as escolas regulares.
+
+# Metodologia
+1. **Coleta de Dados**: Os dados foram coletados do site da prefeitura de Goiânia, que disponibiliza informações sobre o desempenho escolar das escolas da cidade.
+2. **Limpeza de Dados**: Os dados foram limpos e organizados utilizando a biblioteca Pandas, removendo entradas duplicadas e corrigindo inconsistências.
+3. **Análise Exploratória**:
+   - Cálculo da média de notas por escola.
+   - Comparação entre escolas públicas e privadas.
+   - Análise da distribuição das notas.
+4. **Visualização de Dados**: Utilizando Matplotlib e Seaborn, foram criados gráficos para ilustrar as tendências e insights encontrados na análise.
+5. **Interpretação dos Resultados**: Os resultados foram interpretados para validar ou refutar as hipóteses iniciais, e foram feitas recomendações para melhorias no desempenho escolar.
+
+# Resultados
+## [✅] As escolas públicas tendem a ter um desempenho inferior em comparação às escolas privadas.
+![Github Traffic](/static/images/desempenho_por_rede.png)
+Nota-se que Escolas Privadas tendem a ter um desempenho melhor que as Escolas Públicas, com uma média 
+de notas significativamente mais alta. 
+Além disso, as escola municipais, que são uma subcategoria das escolas públicas,
+também apresentam um desempenho muito inferior em comparação às escolas estaduais e privadas.
+
+## [✅] Existe uma correlação entre a localização da escola e o desempenho dos alunos.
+![Github Traffic](/static/images/desempenho_por_zona.png)
+A análise revelou que as escolas localizadas em áreas centrais não tendem a ter um desempenho significativamente melhor
+do que as escolas localizadas em áreas rurais ou longe das metrópoles.   
+
+## [✅] As escolas com maior número de alunos tendem a ter um desempenho pior.
+![Github Traffic](/static/images/desempenho_por_numero_de_alunos.png)
+A análise mostrou que as escolas com um número maior de alunos tendem a ter um desempenho pior
+em comparação às escolas com um número menor de alunos. Isso pode ser devido à dificuldade de manter
+a qualidade do ensino em escolas com um grande número de alunos, onde os professores podem ter menos
+tempo para se dedicar a cada aluno individualmente.
+
+## [✅] Escolas Militares tendem a ter um desempenho melhor que as escolas regulares.
+![Github Traffic](/static/images/desempenho_por_rede_plus.png)
+A análise mostrou que as escolas militares tendem a ter um desempenho melhor que as escolas regulares em termos de notas médias dos alunos. Isso pode ser devido à disciplina e rigor das escolas militares,
+que podem levar a um ambiente de aprendizado mais focado e produtivo.
+
+#
+
+# Conclusão
+A análise do desempenho escolar das escolas de Goiânia revelou várias tendências e insights importantes. As escolas privadas tendem a 
+ter um desempenho melhor que as escolas públicas, e as escolas militares se destacam positivamente. A localização da escola e o número 
+de alunos também influenciam o desempenho escolar, com escolas menores geralmente apresentando melhores resultados.
+A análise destaca a importância de políticas educacionais direcionadas para melhorar o desempenho das escolas públicas e a 
+necessidade de recursos adequados para apoiar o aprendizado dos alunos. Além disso, os resultados sugerem que a disciplina e o
+ ambiente de aprendizado das escolas militares podem ser modelos a serem considerados para outras instituições.

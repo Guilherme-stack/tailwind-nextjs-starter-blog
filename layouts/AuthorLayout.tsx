@@ -2,6 +2,7 @@ import { ReactNode } from 'react'
 import type { Authors } from 'contentlayer/generated'
 import SocialIcon from '@/components/social-icons'
 import Image from '@/components/Image'
+import '@fontsource/slackey' // Importa a fonte globalmente
 
 interface Props {
   children: ReactNode
@@ -13,13 +14,35 @@ export default function AuthorLayout({ children, content }: Props) {
 
   return (
     <>
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-          <h1 className="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14 dark:text-gray-100">
-            About
-          </h1>
+      <div className="font-slackey grid grid-cols-[2fr_3fr] items-start">
+        <div className="flex h-full items-center justify-center bg-[#F7F0E2]">
+          <Image src={'/static/images/guilherme.png'} alt="avatar" width={600} height={600} />
         </div>
-        <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
+        <div className="relative flex h-full flex-col items-center justify-center gap-14 bg-[#FF004C] p-24 text-center">
+          <h1 className="font-slackey text-7xl font-extrabold text-[#FAFF00]">
+            Guilherme Lima Mota
+          </h1>
+          <div className="flex flex-col items-center">
+            <h3 className="text-5xl text-[#FAFF00]">Biografia:</h3>
+            <p className="text-2xl text-white">
+              Estudande de Sistemas de Informação (UFG) , Programador, Designer UI/UX, Curioso,
+              Leitor, Corredor, Fã do BK e do RET, From Goiânia, Nascido no Pará, Interessado em
+              Arte.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-5xl text-[#FAFF00]">Interesses:</h3>
+            <p className="text-2xl text-white">
+              História, Grécia Antiga, Sócratres, BK, RET, Arte, Exercício Físico, Comportamento
+              Humano, Estética, Moda, Estudo, Resenhas, Artigos Ciêntificos, Modernidade, Podcast.
+            </p>
+          </div>
+          <div className="absolute right-0 bottom-0 w-full border-2 border-black bg-[#FAFF00] p-4 text-center text-black">
+            <p>“eu nunca perco, é tudo troca. Eu sempre deixo, o que é meu volta” - BK</p>
+          </div>
+        </div>
+      </div>
+      {/* <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
           <div className="flex flex-col items-center space-x-2 pt-8">
             {avatar && (
               <Image
@@ -44,8 +67,7 @@ export default function AuthorLayout({ children, content }: Props) {
           <div className="prose dark:prose-invert max-w-none pt-8 pb-8 xl:col-span-2">
             {children}
           </div>
-        </div>
-      </div>
+        </div> */}
     </>
   )
 }

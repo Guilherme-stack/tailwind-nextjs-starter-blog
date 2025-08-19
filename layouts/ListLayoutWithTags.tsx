@@ -9,6 +9,7 @@ import Link from '@/components/Link'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import tagData from 'app/tag-data.json'
+import Image from '@/components/Image'
 
 interface PaginationProps {
   totalPages: number
@@ -33,10 +34,10 @@ function Pagination({ totalPages, currentPage }: PaginationProps) {
   const nextPage = currentPage + 1 <= totalPages
 
   return (
-    <div className="space-y-2 pt-6 pb-8 md:space-y-5">
+    <div className="pt-6 pb-8 text-black">
       <nav className="flex justify-between">
         {!prevPage && (
-          <button className="cursor-auto disabled:opacity-50" disabled={!prevPage}>
+          <button className="cursor-auto disabled:opacity-60" disabled={!prevPage}>
             Previous
           </button>
         )}
@@ -81,21 +82,21 @@ export default function ListLayoutWithTags({
 
   return (
     <>
-      <div>
-        <div className="pt-6 pb-6">
+      <div className="bg-white">
+        <div className="pt-12 pb-6">
           <h1 className="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:hidden sm:text-4xl sm:leading-10 md:text-6xl md:leading-14 dark:text-gray-100">
             {title}
           </h1>
         </div>
         <div className="flex sm:space-x-24">
-          <div className="hidden h-full max-h-screen max-w-[280px] min-w-[280px] flex-wrap overflow-auto rounded-sm bg-gray-50 pt-5 shadow-md sm:flex dark:bg-gray-900/70 dark:shadow-gray-800/40">
+          <div className="sticky top-15 left-10 hidden h-full max-h-screen max-w-[280px] min-w-[280px] flex-wrap overflow-auto rounded-2xl border-3 border-black bg-white pt-5 sm:flex dark:bg-[#FAFF00]">
             <div className="px-6 py-4">
               {pathname.startsWith('/blog') ? (
-                <h3 className="text-primary-500 font-bold uppercase">All Posts</h3>
+                <h3 className="font-bold text-[#FF004C] uppercase">All Posts</h3>
               ) : (
                 <Link
                   href={`/blog`}
-                  className="hover:text-primary-500 dark:hover:text-primary-500 font-bold text-gray-700 uppercase dark:text-gray-300"
+                  className="font-bold text-gray-700 uppercase hover:text-[#FF004C] dark:text-gray-300 dark:hover:text-[#FF004C]"
                 >
                   All Posts
                 </Link>
@@ -105,13 +106,13 @@ export default function ListLayoutWithTags({
                   return (
                     <li key={t} className="my-3">
                       {decodeURI(pathname.split('/tags/')[1]) === slug(t) ? (
-                        <h3 className="text-primary-500 inline px-3 py-2 text-sm font-bold uppercase">
+                        <h3 className="inline px-3 py-2 text-sm font-bold text-[#FF004C] uppercase">
                           {`${t} (${tagCounts[t]})`}
                         </h3>
                       ) : (
                         <Link
                           href={`/tags/${slug(t)}`}
-                          className="hover:text-primary-500 dark:hover:text-primary-500 px-3 py-2 text-sm font-medium text-gray-500 uppercase dark:text-gray-300"
+                          className="px-3 py-2 text-sm font-medium text-black uppercase hover:text-[#FF004C] dark:hover:text-[#FF004C]"
                           aria-label={`View posts tagged ${t}`}
                         >
                           {`${t} (${tagCounts[t]})`}
@@ -123,41 +124,50 @@ export default function ListLayoutWithTags({
               </ul>
             </div>
           </div>
-          <div>
-            <ul>
+          <div className="px-8">
+            <div className="grid grid-cols-2 gap-6 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
               {displayPosts.map((post) => {
                 const { path, date, title, summary, tags } = post
                 return (
-                  <li key={path} className="py-5">
-                    <article className="flex flex-col space-y-2 xl:space-y-0">
+                  <div key={path} className="py-5">
+                    <article className="flex flex-col">
                       <dl>
                         <dt className="sr-only">Published on</dt>
-                        <dd className="text-base leading-6 font-medium text-gray-500 dark:text-gray-400">
+                        <dd className="text-base leading-6 font-medium text-gray-600 dark:text-gray-600">
                           <time dateTime={date} suppressHydrationWarning>
                             {formatDate(date, siteMetadata.locale)}
                           </time>
                         </dd>
                       </dl>
-                      <div className="space-y-3">
+                      <div className=" ">
                         <div>
-                          <h2 className="text-2xl leading-8 font-bold tracking-tight">
-                            <Link href={`/${path}`} className="text-gray-900 dark:text-gray-100">
+                          <h2 className="mb-1 text-2xl leading-8 font-extrabold tracking-tight">
+                            <Link href={`/${path}`} className="text-[#FF004C] dark:text-[#FF004C]">
                               {title}
                             </Link>
                           </h2>
-                          <div className="flex flex-wrap">
+                          <div>
+                            <Image
+                              src={'/static/images/post-image-exemplo.png'}
+                              alt="avatar"
+                              width={400}
+                              height={260}
+                              style={{ width: '100%', height: 'auto' }}
+                            />
+                          </div>
+                          <div className="flex flex-wrap pt-2">
                             {tags?.map((tag) => <Tag key={tag} text={tag} />)}
                           </div>
                         </div>
-                        <div className="prose max-w-none text-gray-500 dark:text-gray-400">
+                        <div className="prose max-w-none text-gray-800 dark:text-gray-700">
                           {summary}
                         </div>
                       </div>
                     </article>
-                  </li>
+                  </div>
                 )
               })}
-            </ul>
+            </div>
             {pagination && pagination.totalPages > 1 && (
               <Pagination currentPage={pagination.currentPage} totalPages={pagination.totalPages} />
             )}

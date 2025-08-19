@@ -7,20 +7,10 @@ interface Project {
 
 const projectsData: Project[] = [
   {
-    title: 'A Search Engine',
-    description: `What if you could look up any information in the world? Webpages, images, videos
-    and more. Google has many features to help you find exactly what you're looking
-    for.`,
-    imgSrc: '/static/images/google.png',
-    href: 'https://www.google.com',
-  },
-  {
-    title: 'The Time Machine',
-    description: `Imagine being able to travel back in time or to the future. Simple turn the knob
-    to the desired date and press "Go". No more worrying about lost keys or
-    forgotten headphones with this simple yet affordable solution.`,
-    imgSrc: '/static/images/time-machine.jpg',
-    href: '/blog/the-time-machine',
+    title: 'Análise do Desempenho Escolar das Escolas de Goiânia',
+    description: `Insights sobre o desempenho escolar das escolas de Goiânia, utilizando Python para análise de dados e visualização. Através de dados retirados do próprio site da prefeitura de Goiânia, explorei métricas como taxas de aprovação, reprovação e evasão escolar, além de comparar o desempenho entre escolas públicas e privadas. O projeto destaca a importância da análise de dados na educação para identificar áreas de melhoria e promover políticas educacionais mais eficazes.`,
+    imgSrc: '/static/images/time-machine.png',
+    href: '/blog/analise-do-desempenho-escolar-das-escolas-de-goiania',
   },
 ]
 

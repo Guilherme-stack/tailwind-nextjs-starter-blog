@@ -2313,6 +2313,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource/slackey@npm:^5.2.6":
+  version: 5.2.6
+  resolution: "@fontsource/slackey@npm:5.2.6"
+  checksum: d05b50590bcc336248b7f2ed53498e6f3c58f7b66289c2f8ae85b3b2d64d8ec6e52faaafad758d1d52f04c694e4dc630943a4ca1473f7be703485708aedbc39c
+  languageName: node
+  linkType: hard
+
 "@giscus/react@npm:^3.0.0":
   version: 3.1.0
   resolution: "@giscus/react@npm:3.1.0"
@@ -11648,6 +11655,7 @@ __metadata:
   dependencies:
     "@eslint/eslintrc": ^3.2.0
     "@eslint/js": ^9.16.0
+    "@fontsource/slackey": ^5.2.6
     "@headlessui/react": 2.2.0
     "@next/bundle-analyzer": 15.2.4
     "@svgr/webpack": ^8.0.1
