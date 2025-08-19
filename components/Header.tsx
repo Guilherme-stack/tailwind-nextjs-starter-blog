@@ -18,7 +18,10 @@ const Header = () => {
       <div className="flex items-center space-x-4 leading-5 sm:-mr-6 sm:space-x-6">
         <div className="no-scrollbar hidden items-center gap-x-4 overflow-x-auto sm:flex">
           {headerNavLinks.map((link) => (
-            <div className="rounded-2xl border-3 border-black bg-white p-3 text-black">
+            <div
+              key={link.title}
+              className="rounded-2xl border-3 border-black bg-white p-3 text-black"
+            >
               <Link
                 key={link.title}
                 href={link.href}
