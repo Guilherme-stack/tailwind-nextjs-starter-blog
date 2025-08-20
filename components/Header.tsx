@@ -8,7 +8,7 @@ import SearchButton from './SearchButton'
 
 const Header = () => {
   let headerClass =
-    'flex items-center justify-between   fixed top-3 left-[38%]  px-4 sm:px-6 lg:px-8 transition-colors duration-300 z-999'
+    'flex items-center justify-between   fixed top-3 left-[41%]  px-4 sm:px-6 lg:px-8 transition-colors duration-300 z-999'
   if (siteMetadata.stickyNav) {
     headerClass += ' sticky top-0 z-50'
   }
@@ -20,20 +20,16 @@ const Header = () => {
           {headerNavLinks.map((link) => (
             <div
               key={link.title}
-              className="rounded-2xl border-3 border-black bg-white p-3 text-black"
+              className="rounded-2xl border-3 border-[#fff] bg-[#FF004C] text-[##fff]"
             >
-              <Link
-                key={link.title}
-                href={link.href}
-                className="m-1 font-medium hover:text-[#FF004C] dark:hover:text-[#FF004C]"
-              >
+              <Link key={link.title} href={link.href} className="m-1 block p-3 font-medium">
                 {link.title}
               </Link>
             </div>
           ))}
         </div>
-        <SearchButton />
-        <ThemeSwitch />
+        {/*  <SearchButton />
+        <ThemeSwitch /> */}
         <MobileNav />
       </div>
     </header>

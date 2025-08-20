@@ -14,25 +14,25 @@ export default function AuthorLayout({ children, content }: Props) {
 
   return (
     <>
-      <div className="font-slackey grid grid-cols-[2fr_3fr] items-start">
-        <div className="flex h-full items-center justify-center bg-[#F7F0E2]">
+      <div className="font-slackey grid grid-cols-[2fr_3fr] items-start max-md:grid-cols-[1fr]">
+        <div className="flex h-full items-center justify-center bg-[#F7F0E2] max-md:hidden">
           <Image src={'/static/images/guilherme.png'} alt="avatar" width={600} height={600} />
         </div>
-        <div className="relative flex h-full flex-col items-center justify-center gap-14 bg-[#FF004C] p-24 text-center">
-          <h1 className="font-slackey text-7xl font-extrabold text-[#FAFF00]">
+        <div className="relative flex h-full flex-col items-center justify-center gap-14 bg-[#FF004C] p-24 text-center max-md:p-5 max-md:pt-15 max-md:pb-40">
+          <h1 className="font-slackey text-7xl font-extrabold text-[#FAFF00] max-md:text-3xl">
             Guilherme Lima Mota
           </h1>
           <div className="flex flex-col items-center">
-            <h3 className="text-5xl text-[#FAFF00]">Biografia:</h3>
-            <p className="text-2xl text-white">
+            <h3 className="text-5xl text-[#FAFF00] max-md:text-3xl">Biografia:</h3>
+            <p className="text-2xl text-white max-md:text-xl">
               Estudande de Sistemas de Informação (UFG) , Programador, Designer UI/UX, Curioso,
               Leitor, Corredor, Fã do BK e do RET, From Goiânia, Nascido no Pará, Interessado em
               Arte.
             </p>
           </div>
           <div>
-            <h3 className="text-5xl text-[#FAFF00]">Interesses:</h3>
-            <p className="text-2xl text-white">
+            <h3 className="text-5xl text-[#FAFF00] max-md:text-3xl">Interesses:</h3>
+            <p className="text-2xl text-white max-md:text-xl">
               História, Grécia Antiga, Sócratres, BK, RET, Arte, Exercício Físico, Comportamento
               Humano, Estética, Moda, Estudo, Resenhas, Artigos Ciêntificos, Modernidade, Podcast.
             </p>
