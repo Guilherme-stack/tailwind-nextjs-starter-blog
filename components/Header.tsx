@@ -8,21 +8,22 @@ import SearchButton from './SearchButton'
 
 const Header = () => {
   let headerClass =
-    'flex items-center justify-between   fixed top-3 left-[41%]  px-4 sm:px-6 lg:px-8 transition-colors duration-300 z-999'
+    'flex items-center justify-between fixed top-0 w-full bg-[#FAFF00] py-1 border-y-3 border-[#fff]  sm:px-6 lg:px-8 transition-colors duration-300 z-999'
   if (siteMetadata.stickyNav) {
     headerClass += ' sticky top-0 z-50'
   }
 
   return (
     <header className={headerClass}>
-      <div className="flex items-center space-x-4 leading-5 sm:-mr-6 sm:space-x-6">
-        <div className="no-scrollbar hidden items-center gap-x-4 overflow-x-auto sm:flex">
+      <div className="flex w-full items-center space-x-4 sm:space-x-6">
+        <div className="no-scrollbar flex w-full items-center justify-center gap-x-4 overflow-x-auto sm:flex">
           {headerNavLinks.map((link) => (
-            <div
-              key={link.title}
-              className="rounded-2xl border-3 border-[#fff] bg-[#FF004C] text-[##fff]"
-            >
-              <Link key={link.title} href={link.href} className="m-1 block p-3 font-medium">
+            <div key={link.title} className="">
+              <Link
+                key={link.title}
+                href={link.href}
+                className="font-slackey m-1 block rounded-2xl border-3 border-[#000] bg-[#FF004C] px-3 py-1 font-medium text-[#fff]"
+              >
                 {link.title}
               </Link>
             </div>
@@ -30,7 +31,7 @@ const Header = () => {
         </div>
         {/*  <SearchButton />
         <ThemeSwitch /> */}
-        <MobileNav />
+        {/* <MobileNav /> */}
       </div>
     </header>
   )

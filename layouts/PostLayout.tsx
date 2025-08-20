@@ -34,8 +34,8 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
   return (
     <SectionContainer>
       <ScrollTopAndComment />
-      <article className="bg-black px-25 pt-20 max-md:px-5">
-        <div className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
+      <article className="bg-black px-120 pt-20 max-md:px-5">
+        <div className="divide-y divide-gray-200 dark:divide-gray-700">
           <header className="pt-6 xl:pb-6">
             <div className="space-y-1 text-center">
               <dl className="space-y-10">
@@ -53,46 +53,17 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
               </div>
             </div>
           </header>
-          <div className="grid-rows-[auto_1fr] divide-y divide-gray-200 pb-8 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0 dark:divide-gray-700">
-            <dl className="pt-6 pb-10 xl:border-b xl:border-gray-200 xl:pt-11 xl:dark:border-gray-700">
-              <dt className="sr-only">Authors</dt>
-              <dd>
-                <ul className="flex flex-wrap justify-center gap-4 sm:space-x-12 xl:block xl:space-y-8 xl:space-x-0">
-                  {authorDetails.map((author) => (
-                    <li className="flex items-center space-x-2" key={author.name}>
-                      {author.avatar && (
-                        <Image
-                          src={'/static/images/guilherme.png'}
-                          width={1500}
-                          height={2000}
-                          alt="avatar"
-                          className="h-32 w-32 rounded-full"
-                        />
-                      )}
-                      <dl className="text-sm leading-5 font-medium whitespace-nowrap">
-                        <dt className="sr-only">Name</dt>
-                        <dd className="text-lg text-gray-900 dark:text-gray-100">Guilherme Lima</dd>
-                        <dd>
-                          <p className="text-wrap text-[#FAFF00]">
-                            Analista, Escritor e Entusiasta de Tecnologia
-                          </p>
-                        </dd>
-                      </dl>
-                    </li>
-                  ))}
-                </ul>
-              </dd>
-            </dl>
-            <div className="divide-y divide-gray-200 xl:col-span-3 xl:row-span-2 xl:pb-0 dark:divide-gray-700">
-              <div className="prose dark:prose-invert max-w-none pt-10 pb-8">{children}</div>
+          <div className="w-full divide-gray-200 pb-8 dark:divide-gray-700">
+            <div className="w-full divide-y divide-gray-200 dark:divide-gray-700">
+              <div className="prose dark:prose-invert m-auto w-full pt-10 pb-8">{children}</div>
+              <footer>
+                <div className="pt-4 xl:pt-8">
+                  <Link href={`/projects`} className="text-[#FAFF00]">
+                    &larr; Voltar aos Projetos
+                  </Link>
+                </div>
+              </footer>
             </div>
-            <footer>
-              <div className="pt-4 xl:pt-8">
-                <Link href={`/projects`} className="text-[#FAFF00]" aria-label="Back to the blog">
-                  &larr; Voltar aos Projetos
-                </Link>
-              </div>
-            </footer>
           </div>
         </div>
       </article>
