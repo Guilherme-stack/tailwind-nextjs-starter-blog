@@ -5,8 +5,8 @@ import SocialIcon from '@/components/social-icons'
 export default function Footer() {
   return (
     <footer>
-      <div className="flex items-center justify-around gap-3 bg-[#FAFF00] py-2 align-middle max-md:flex-col">
-        <div className="flex space-x-2 text-sm text-black">
+      <div className="flex items-center justify-around gap-3 border-t-3 border-b-3 border-white bg-[#FAFF00] py-2 align-middle max-md:flex-col">
+        <div className="flex space-x-2 text-sm font-bold text-black">
           <div>{`© ${new Date().getFullYear()}`}</div>
           <div>{` • `}</div>
           <Link href="/">{siteMetadata.title}</Link>

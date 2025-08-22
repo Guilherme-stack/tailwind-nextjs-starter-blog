@@ -9,7 +9,7 @@ export default function Projects() {
     <>
       <div className="w-full divide-y-3 divide-[#FAFF00] bg-black px-25 pt-15 pb-60 max-md:px-5 max-md:pb-10">
         <div className="space-y-2 pt-10 pb-8 md:space-y-5">
-          <h1 className="font-slackey text-center text-3xl leading-9 font-extrabold text-[#FAFF00] [-webkit-text-stroke:1.5px_#FF004C] max-md:text-4xl sm:text-4xl sm:leading-10 md:leading-14">
+          <h1 className="font-slackey sm: text-center text-6xl leading-9 font-extrabold text-[#FAFF00] [-webkit-text-stroke:1.5px_#FF004C] max-md:text-4xl">
             ANÁLISES & PROJETOS
           </h1>
         </div>
