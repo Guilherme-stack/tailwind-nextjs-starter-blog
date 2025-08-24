@@ -13,8 +13,8 @@ export default function Projects() {
             ANÁLISES & PROJETOS
           </h1>
         </div>
-        <div className="container py-12">
-          <div className="-m-4 flex flex-wrap">
+        <div className="w-full py-12">
+          <div className="grid grid-cols-3 max-md:grid-cols-1">
             {projectsData.map((d) => (
               <Card
                 key={d.title}
