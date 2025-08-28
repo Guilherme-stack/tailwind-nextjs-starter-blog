@@ -30,6 +30,12 @@ podemos **aumentar faturamento e recorrência de compras**.`,
     imgSrc: '/static/images/time-machine.jpg',
     href: '/blog/techwave',
   },
+  {
+    title: 'DASHBOARD DE VENDAS - META-X',
+    description: `Uma rede fictícia de lojas precisa de um dashboard de performance de vendas para a diretoria`,
+    imgSrc: '/static/images/time-machine.jpg',
+    href: '/blog/dashboard-vendas',
+  },
 ]
 
 export default projectsData
