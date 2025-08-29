@@ -4,7 +4,6 @@ import 'remark-github-blockquote-alert/alert.css'
 import { Space_Grotesk, Slackey, Poppins, Bricolage_Grotesque, Skranji } from 'next/font/google'
 import Script from 'next/script'
 
-import { Analytics, AnalyticsConfig } from 'pliny/analytics'
 import { SearchProvider, SearchConfig } from 'pliny/search'
 import Header from '@/components/Header'
 import SectionContainer from '@/components/SectionContainer'
@@ -123,7 +122,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
           }}
         />
         <ThemeProviders>
-          <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
           <SectionContainer>
             <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
               <Header />
