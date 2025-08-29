@@ -99,6 +99,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         color="#5bbad5"
       />
       <head>
+        <Script
+          id="ga4-src"
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=G-JJWDDE4QZQ`}
+        />
+        <Script id="ga4-inline" strategy="afterInteractive">
+          {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){window.dataLayer.push(arguments);}
+                gtag('js', new Date());
+                // Importante para SPA: desativa o page_view automático
+                gtag('config', 'G-JJWDDE4QZQ', { send_page_view: false });
+              `}
+        </Script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <meta name="msapplication-TileColor" content="#000000" />
@@ -106,13 +120,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
       <link rel="alternate" type="application/rss+xml" href={`${basePath}/feed.xml`} />
       <body className="text-black antialiased dark:bg-gray-950 dark:text-white">
-        <Script id="gtm" strategy="afterInteractive">
+        {/*  <Script id="gtm" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-M99C9S4M');`}
-        </Script>
+        </Script> */}
 
         {/* GTM: noscript (fallback) — recomendado ficar logo após <body> */}
         <noscript>
