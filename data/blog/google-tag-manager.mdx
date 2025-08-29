@@ -1,0 +1,112 @@
+---
+title: 'Meta-X: Dashboard de Vendas'
+date: '2025-08-24'
+tags: ['writings', 'book', 'reflection']
+draft: false
+---
+
+ 
+# Introdução   
+## Implementação de Mensuração com Google Tag Manager (GTM) + GA4 no meu Portfólio React
+
+1. Integrei o GTM no meu site React e configurei GA4.
+2. Criei eventos customizados (ex.: cliques em CTA, visibilidade de elementos, scroll e links externos).
+3. Padronizei a camada de dados (dataLayer) e mapeei parâmetros no GTM.
+4. Validei tudo no Preview do GTM e no Em tempo real/DebugView do GA4.
+5. Relatórios padrão levam até 24h para consolidar, mas já consigo ver os eventos em tempo real.
+
+# Objetivo
+## Implementar uma base de mensuração confiável para:
+
+1. Entender quais CTAs são mais clicados e em quais seções.
+2. Mensurar visibilidade de elementos-chave (hero, banners).
+3. Registrar navegação em SPA (page_view virtual).
+4. Acompanhar interações importantes (scroll, links externos, envio de formulário).
+
+# Critérios de sucesso:
+
+1. Eventos aparecendo no DebugView e Em tempo real do GA4.
+2. Parâmetros populados corretamente (cta_label, page_path, etc.).
+3. Configuração organizada e replicável no GTM.
+
+# Stack e Ferramentas
+- Front-end: React (SPA).
+- Mensuração: Google Tag Manager + Google Analytics 4.
+- Validação: Tag Assistant (Preview) e DebugView do GA4.
+- Arquitetura de Mensuração
+- Uso de dataLayer.push para eventos e parâmetros.
+- Eventos: click_cta, element_visible, form_submit, scroll_depth, outbound_click
+- Parâmetros: cta_label, cta_position, page_path, percent_visible, element_id, link_url
+- Mapeamento no GTM via Variáveis da Camada de Dados (ex.: cta_label, page_path).
+
+# O que eu implementei
+1. Instalação do GTM no React
+2. Inclusão do snippet do GTM no index.html ou via react-helmet.
+3. Verificação no Preview do GTM para confirmar o carregamento do contêiner.
+4. GA4 – Configuração e Eventos
+5. Tag “GA4 – Configuração” com Measurement ID correto.
+
+**Tags “GA4 – Evento” para:**
+- click_cta (parâmetros: cta_label, cta_position, page_path)
+- element_visible (percent_visible, element_id, page_path)
+- SPA – Page Views Virtuais
+- Visibilidade de Elemento (Viewability)
+- Scroll e Links Externos
+
+# Detalhes de Configuração no GTM
+## Tags Criadas
+![Github Traffic](/static/images/tags.png)
+## Acionadores Criados
+![Github Traffic](/static/images/acionadores.png)
+1. cta-links: Aciona em cliques em links com.
+2. cta-click: Aciona em cliques em botões.
+3. view-cases: Aciona quando o elemento com ID "#cta-view" fica visível em pelo menos 50% na viewport.
+4. view-madefy: Aciona quando o elemento com ID "#view-madefy" fica visível em pelo menos 50% na viewport.
+
+## Código no Site (React)
+```javascript
+// src/utils/gtm.ts
+export function gtmEvent(event: string, params: Record<string, any> = {}) {
+  if (typeof window !== "undefined") {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event, ...params });
+  }
+}```
+```javascript
+// Exemplo de uso em um componente React
+import { gtmEvent } from "../utils/gtm";   
+const handleClick = () => {
+    gtmEvent("cta_click", {
+      cta_label: "entrar em contato",
+      page_path: window.location.pathname,
+    });
+  };
+... return (
+<a className="suave" onClick={handleClick} href="#contato">entrar em contato</a>
+)
+```
+
+# Validação 
+## Tag Assistant (Preview)
+
+**Confirmei a chegada dos eventos (click_cta, element_visible, etc.) na timeline.
+Verifiquei se os parâmetros estão preenchidos nas Tags (Ex.: cta_label, page_path).
+GA4**
+
+- Em tempo real e DebugView: eventos aparecem em segundos.
+- Relatórios padrão: podem levar até 24h para consolidar.
+
+![Github Traffic](/static/images/acoes.png)
+
+# Resultados Iniciais
+1. Eventos customizados confirmados em tempo real: ✅.
+2. Page views virtuais em SPA via History Change: ✅.
+3. Parâmetros padronizados alimentando GA4: ✅.
+4. Estrutura preparada para crescer (novos eventos e funis): ✅.
+
+# Próximos Passos
+1. Monitorar dados nos próximos dias para garantir consistência.
+2. Criar relatórios personalizados no GA4 para análise de CTAs e comportamento.
+3. Otimizar a mensuração conforme novas necessidades surgirem.
+4. Considerar integração com BigQuery para análises avançadas no futuro.
+5. Explorar Google Data Studio para dashboards visuais com os dados do GA4.

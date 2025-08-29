@@ -7,6 +7,12 @@ interface Project {
 
 const projectsData: Project[] = [
   {
+    title: 'GOOGLE TAG MANAGER - RASTREAMENTO DE EVENTOS',
+    description: `Projeto fictício de implementação do Google Tag Manager (GTM) para rastreamento de eventos em um site.`,
+    imgSrc: '/static/images/time-machine.jpg',
+    href: '/blog/google-tag-manager',
+  },
+  {
     title: 'ANÁLISE DO DESEMPENHO DAS ESCOLAS DE GOIÂNIA',
     description: `Insights sobre o desempenho escolar das escolas de Goiânia, utilizando Python para
      análise de dados e visualização. Através de dados retirados do próprio site da prefeitura de Goiânia,
