@@ -7,8 +7,14 @@ interface Project {
 
 const projectsData: Project[] = [
   {
+    title: 'APRESENTAÇÃO E INSIGHTS DE CAMPANHAS DE MARKETING',
+    description: `Projeto fictício de análise e apresentação de insights sobre campanhas de marketing digital em uma empresa.`,
+    imgSrc: '/static/images/time-machine.jpg',
+    href: '/blog/apresentacao-e-insights-de-campanhas-de-marketing',
+  },
+  {
     title: 'GOOGLE TAG MANAGER - RASTREAMENTO DE EVENTOS',
-    description: `Projeto fictício de implementação do Google Tag Manager (GTM) para rastreamento de eventos em um site.`,
+    description: `Projeto de implementação do Google Tag Manager (GTM) para rastreamento de eventos em um site.`,
     imgSrc: '/static/images/time-machine.jpg',
     href: '/blog/google-tag-manager',
   },
